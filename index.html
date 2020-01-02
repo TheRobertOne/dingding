@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="getAuth()">授权</button>
+</body>
+<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script>
+    function getAuth() {
+        $.ajax({
+            //请求方式
+            type : "get",
+            //请求地址
+            url : "https://oapi.dingtalk.com/gettoken?appkey=dingsqk5c7abvirvjhwv&appsecret=yJRz5O3fP5Y27qOTtexSJfQDC8d59c5CPF0afQoU76L2xcYMAUnmT57FxAIHDjP4",
+            //请求成功
+            success : function(res) {
+                console.log(res);
+                alert(res)
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+    }
+</script>
+</html>
