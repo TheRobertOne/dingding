@@ -1,12 +1,14 @@
 #coding=utf-8
+from flask_cors import *
 import flask,json
 from flask import jsonify
 import requests
 
 server = flask.Flask(__name__)
+# CORS(server, supports_credentials=True)
 class DateEncoder(json.JSONEncoder):
-
     @server.route('/getAccessToken', methods=['get'])
+    @cross_origin()
     def get_access_token():
         headers = {
             'Accept':'application/json, text/javascript, */*; q=0.01',
