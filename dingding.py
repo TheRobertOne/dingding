@@ -25,4 +25,4 @@ class DateEncoder(json.JSONEncoder):
 
 
 
-server.run(port=7676, debug=True,host='0.0.0.0')
+server.run(port=7676,host='0.0.0.0')
